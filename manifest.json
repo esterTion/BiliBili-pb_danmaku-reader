@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "BiliBili PB Viewer",
+  "version": "666",
+  "description": "Protobuf danmaku reader",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://comment.bilibili.com/*.pb"
+      ],
+      "js": [
+        "bilibili_pb_reader.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "bilibili_pb_reader_background.js"
+    ]
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+		"*://comment.bilibili.com/*.pb"
+  ]
+}
